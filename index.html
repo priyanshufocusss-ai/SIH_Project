@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Real-time Airfare Price Index</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="gov">
+    <div class="emblem">
+      <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="none" stroke="#dbe9ff" stroke-width="3"/><circle cx="50" cy="50" r="4" fill="#dbe9ff"/>
+        <g stroke="#dbe9ff" stroke-width="2">
+          <line x1="50" y1="50" x2="50" y2="8"/><line x1="50" y1="50" x2="50" y2="92"/>
+          <line x1="50" y1="50" x2="8" y2="50"/><line x1="50" y1="50" x2="92" y2="50"/>
+          <line x1="50" y1="50" x2="20" y2="20"/><line x1="50" y1="50" x2="80" y2="80"/>
+          <line x1="50" y1="50" x2="20" y2="80"/><line x1="50" y1="50" x2="80" y2="20"/>
+          <line x1="50" y1="50" x2="35" y2="10"/><line x1="50" y1="50" x2="65" y2="90"/>
+          <line x1="50" y1="50" x2="10" y2="35"/><line x1="50" y1="50" x2="90" y2="65"/>
+          <line x1="50" y1="50" x2="65" y2="10"/><line x1="50" y1="50" x2="35" y2="90"/>
+          <line x1="50" y1="50" x2="10" y2="65"/><line x1="50" y1="50" x2="90" y2="35"/>
+        </g>
+      </svg>
+    </div>
+    <div><b>Government of India</b><span>Ministry of Statistics &amp; Programme Implementation</span><small>सत्यमेव जयते</small></div>
+  </div>
+  <nav>
+    <a class="active">▦ <span>Dashboard</span></a><a>◌ <span>Airfare Data</span></a><a>⌁ <span>Route Analysis</span></a><a>◈ <span>Airfare Index</span></a>
+    <a>✈ <span>Domestic Travel</span></a><a>◎ <span>International Travel</span></a><a>✈ <span>Airlines</span></a>
+    <a>◫ <span>Analytics</span></a><a>↗ <span>Forecast</span></a><a>🔔 <span>Anomalies</span></a><a>✦ <span>AI Agent</span></a><a>◉ <span>Data Sources</span></a><a>▤ <span>Reports</span></a>
+  </nav>
+  <div class="bharat">
+    <svg viewBox="0 0 60 70"><path d="M30 2 L45 12 L50 30 L44 46 L48 58 L38 52 L30 68 L22 52 L12 58 L16 46 L10 30 L15 12 Z" fill="#38bdf8" opacity=".85"/></svg>
+    <div><small>Viksit Bharat</small><b>Through Data &amp; Innovation</b></div>
+  </div>
+  <div class="tricolor-bar"></div>
+  <div class="side-status"><i></i><div><b>Prototype v1.0</b><small>Development Environment</small></div></div>
+  <div class="side-foot">Ministry of Statistics &amp; Programme Implementation</div>
+</aside>
+
+<main>
+<header class="hero">
+  <div class="hero-banner">
+    <svg class="hero-skyline" viewBox="0 0 1300 90" preserveAspectRatio="none">
+      <g fill="#ffffff" opacity=".55">
+        <path d="M700 90 V55 L710 45 L720 55 V90Z"/>
+        <path d="M715 90 V38 Q730 15 745 38 V90Z"/>
+        <path d="M745 90 V50 L755 40 L765 50 V90Z"/>
+        <circle cx="730" cy="30" r="3"/><circle cx="720" cy="30" r="3"/>
+        <path d="M950 90 V60 H1000 V90Z"/><path d="M960 60 L975 20 L990 60Z"/>
+        <path d="M1030 90 V65 H1055 V90Z"/><rect x="1038" y="30" width="8" height="35"/>
+        <path d="M1090 90 V58 H1130 V90Z"/><path d="M1100 58 L1110 25 L1120 58Z"/>
+        <path d="M1160 90 V62 H1185 V90Z"/><rect x="1168" y="35" width="9" height="27"/>
+      </g>
+    </svg>
+    <svg class="hero-plane" viewBox="0 0 300 140">
+      <g fill="#f4f9ff" stroke="#c9deef" stroke-width="1.5">
+        <path d="M10 78 L120 70 L175 30 L192 33 L150 74 L260 76 L285 66 L296 70 L280 86 L296 90 L285 96 L150 86 L200 118 L182 121 L118 88 L10 84Z"/>
+      </g>
+    </svg>
+    <div class="hero-caption"><b>Safer Skies</b><span>Stronger Bharat</span></div>
+  </div>
+  <div class="hero-top">
+    <div class="hero-title">
+      <div class="tricolor"></div>
+      <h1>Real-time Airfare Price Index</h1>
+      <p>Data-Driven Air Travel for a More Inclusive and Connected India</p>
+    </div>
+    <div class="hero-actions">
+      <label class="search">⌕ <input id="search" placeholder="Search city, country, airline..."></label>
+      <button id="theme-sun" class="icon-btn">🌞</button>
+      <button id="theme" class="icon-btn">🌙</button>
+      <div class="live"><i></i><div><b>Live Data</b><small>Last updated 04 Sep 2026, 20:36</small></div></div>
+      <div class="avatar">S</div>
+    </div>
+  </div>
+</header>
+
+<section class="content">
+  <div class="kpis">
+    <article class="kpi"><div class="kpi-icon blue">✈</div><div><small>Current APIx</small><strong data-count="109.05">109.05</strong><em class="up">▲ 9.05%</em><span>vs. base period</span></div>
+      <svg class="mini" viewBox="0 0 70 28" preserveAspectRatio="none"><polyline points="0,20 10,17 20,19 30,12 40,15 50,7 60,10 70,3" fill="none" stroke="#1670ed" stroke-width="2"/></svg></article>
+    <article class="kpi"><div class="kpi-icon cyan">▥</div><div><small>CPI (Airfare) Index</small><strong data-count="125.46">125.46</strong><em class="up">▲ 2.18%</em><span>vs. last month</span></div>
+      <svg class="mini" viewBox="0 0 70 28" preserveAspectRatio="none"><polyline points="0,14 10,18 20,10 30,15 40,9 50,13 60,6 70,9" fill="none" stroke="#0891b2" stroke-width="2"/></svg></article>
+    <article class="kpi"><div class="kpi-icon red">₹</div><div><small>Avg. Domestic Fare</small><strong>₹6,240</strong><em class="down">▲ 6.12%</em><span>vs. last month</span></div>
+      <svg class="mini" viewBox="0 0 70 28" preserveAspectRatio="none"><polyline points="0,10 10,14 20,8 30,17 40,11 50,20 60,15 70,22" fill="none" stroke="#ef4444" stroke-width="2"/></svg></article>
+    <article class="kpi"><div class="kpi-icon violet">◎</div><div><small>Avg. International Fare</small><strong>₹28,450</strong><em class="down">▼ 3.21%</em><span>vs. last month</span></div>
+      <svg class="mini" viewBox="0 0 70 28" preserveAspectRatio="none"><polyline points="0,8 10,13 20,9 30,18 40,14 50,21 60,17 70,23" fill="none" stroke="#22c55e" stroke-width="2"/></svg></article>
+    <article class="kpi"><div class="kpi-icon purple">⌁</div><div><small>Routes Monitored</small><strong>152</strong><em class="up">+12 new routes</em><span>this month</span></div>
+      <svg class="mini" viewBox="0 0 70 28" preserveAspectRatio="none"><g fill="#7c3aed"><rect x="0" y="20" width="6" height="8"/><rect x="10" y="16" width="6" height="12"/><rect x="20" y="13" width="6" height="15"/><rect x="30" y="10" width="6" height="18"/><rect x="40" y="7" width="6" height="21"/><rect x="50" y="4" width="6" height="24"/><rect x="60" y="0" width="6" height="28"/></g></svg></article>
+  </div>
+
+  <div class="grid-main">
+    <article class="card map-card">
+      <div class="card-head"><div><h3>Live Flight Route Monitor</h3><p>Real-time view of major air routes (Domestic &amp; International)</p></div><div class="mode"><button class="active">Live</button><button>Domestic</button><button>International</button></div></div>
+      <div class="world">
+        <div class="world-grid"></div>
+        <svg class="world-map" viewBox="0 0 1000 420" aria-label="World map with India-focused flight routes">
+          <g class="land">
+            <path d="M90 115 C135 70 205 65 250 95 L275 130 240 155 205 145 170 170 125 158 92 138Z"/>
+            <path d="M250 180 L295 195 315 235 295 285 270 330 245 300 250 255 225 220Z"/>
+            <path d="M430 100 C475 65 540 70 575 105 L600 145 575 170 535 155 500 175 455 155 420 135Z"/>
+            <path d="M500 175 L555 185 585 225 570 265 535 275 510 245 485 225Z"/>
+            <path d="M600 125 C650 95 720 105 770 130 L815 165 800 205 755 195 725 215 690 190 655 205 625 175Z"/>
+            <path d="M745 215 L790 225 825 260 800 295 765 285 735 255Z"/>
+            <path d="M820 285 C850 270 895 280 920 310 L900 340 855 335 825 315Z"/>
+            <path d="M400 230 L425 255 435 300 410 325 390 290 385 255Z"/>
+          </g>
+          <g class="route-lines">
+            <path class="yellow" d="M548 190 Q470 145 365 118" />
+            <path class="cyan" d="M548 190 Q675 135 760 155" />
+            <path class="cyan" d="M548 190 Q650 250 825 305" />
+            <path class="green" d="M548 190 Q455 245 405 285" />
+            <path class="cyan" d="M548 190 Q720 215 865 205" />
+            <path class="yellow" d="M548 190 Q600 110 690 88" />
+          </g>
+          <g class="map-node domestic"><circle cx="548" cy="190" r="8"/><circle cx="548" cy="190" r="17" class="pulse"/></g>
+          <g class="map-node international">
+            <circle cx="365" cy="118" r="5"/><circle cx="760" cy="155" r="5"/>
+            <circle cx="825" cy="305" r="5"/><circle cx="690" cy="88" r="5"/>
+            <circle cx="865" cy="205" r="5"/><circle cx="405" cy="285" r="5"/>
+          </g>
+        </svg>
+        <div class="india-pin"><span class="india-flag">🇮🇳</span><div><b>INDIA</b><small>Airfare Hub</small></div></div>
+        <div class="map-city london"><i></i><b>London</b></div>
+        <div class="map-city york"><i></i><b>York</b></div>
+        <div class="map-city dubai"><i></i><b>Dubai</b></div>
+        <div class="map-city tokyo"><i></i><b>Tokyo</b></div>
+        <div class="map-city sydney"><i></i><b>Sydney</b></div>
+        <div class="flight f1">✈</div><div class="flight f2">✈</div><div class="flight f3">✈</div><div class="flight f4">✈</div><div class="flight f5">✈</div>
+        <div class="map-legend"><span><i class="green"></i>Domestic Route</span><span><i class="cyan"></i>International Route</span><span><i class="yellow"></i>High Fare Alert</span></div>
+        <div class="map-stats">
+          <div><i class="s-icon blue">✈</i><div><small>Live Flights (Global)</small><b>12,428</b></div></div>
+          <div><i class="s-icon green">◉</i><div><small>Domestic</small><b>8,342</b></div></div>
+          <div><i class="s-icon cyan">◎</i><div><small>International</small><b>4,086</b></div></div>
+          <div><i class="s-icon red">⚠</i><div><small>High Fare Alerts</small><b class="danger">23</b></div></div>
+          <button>View All Flights →</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="card chart-card">
+      <div class="card-head"><div><h3>Airfare Price Index Trend</h3><p>APIx movement (Daily)</p></div><div class="mode"><button class="active">7D</button><button>30D</button><button>3M</button><button>6M</button><button>1Y</button><button>ALL</button></div></div>
+      <div class="chart-wrap"><div class="ylabels"><span>140</span><span>130</span><span>120</span><span>110</span><span>100</span><span>90</span></div><div class="chart">
+        <div class="chart-grid"></div><svg viewBox="0 0 700 300" preserveAspectRatio="none"><polyline class="ma" points="0,235 40,225 80,225 120,214 160,210 200,198 240,190 280,185 320,170 360,165 400,155 440,145 480,138 520,120 560,110 600,95 650,80 700,68"/><polyline class="mainline" points="0,220 30,210 55,218 80,200 105,205 130,184 155,190 180,170 205,175 230,158 255,165 280,145 305,153 330,125 355,138 380,118 405,126 430,105 455,112 480,92 505,98 530,82 555,90 580,65 605,74 630,52 655,61 680,38 700,28"/></svg>
+        <div class="candles"><i class="g"></i><i class="r"></i><i class="g"></i><i class="g"></i><i class="r"></i><i class="g"></i><i class="g"></i><i class="r"></i><i class="g"></i><i class="g"></i><i class="r"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="r"></i><i class="g"></i><i class="g"></i><i class="r"></i><i class="g"></i><i class="g"></i></div>
+        <div class="tooltip"><b>04 Sep 2026</b><span>APIx: <strong>128.4</strong></span><em>▲ 3.24%</em></div>
+      </div></div><div class="xlabel"><span>Aug 06</span><span>Aug 10</span><span>Aug 14</span><span>Aug 18</span><span>Aug 22</span><span>Aug 26</span><span>Aug 30</span><span>Sep 04</span></div>
+    </article>
+  </div>
+
+  <div class="three-grid">
+    <article class="card"><div class="card-head"><div><h3>Top Domestic Routes</h3><p>Based on current average fare</p></div><a>View All →</a></div><div class="table-head"><span>Route</span><span>Fare (INR)</span><span>Change (24h)</span><span>Trend</span></div>
+      <div class="route-line"><b>DEL – BOM</b><strong>₹6,420</strong><em class="down">▲ 12%</em><span class="spark red">╱╲╱╱</span></div><div class="route-line"><b>DEL – BLR</b><strong>₹7,180</strong><em class="down">▲ 8%</em><span class="spark red">╱╲╱╱</span></div><div class="route-line"><b>BOM – BLR</b><strong>₹5,240</strong><em class="up">▼ 3%</em><span class="spark green">╲╱╲╱</span></div><div class="route-line"><b>DEL – CCU</b><strong>₹6,850</strong><em class="down">▲ 6%</em><span class="spark red">╱╲╱╱</span></div><div class="route-line"><b>BLR – HYD</b><strong>₹4,620</strong><em class="down">▲ 4%</em><span class="spark red">╱╲╱╱</span></div>
+    </article>
+
+    <article class="card"><div class="card-head"><div><h3>Top International Routes</h3><p>Based on current average fare</p></div><a>View All →</a></div><div class="table-head"><span>Route</span><span>Fare (INR)</span><span>Change (24h)</span><span>Trend</span></div>
+      <div class="route-line"><b>DEL – DXB</b><strong>₹28,450</strong><em class="up">▼ 3%</em><span class="spark green">╲╱╲╱</span></div><div class="route-line"><b>DEL – LHR</b><strong>₹52,180</strong><em class="down">▲ 5%</em><span class="spark red">╱╲╱╱</span></div><div class="route-line"><b>BOM – SIN</b><strong>₹36,240</strong><em class="up">▼ 2%</em><span class="spark green">╲╱╲╱</span></div><div class="route-line"><b>DEL – JFK</b><strong>₹62,350</strong><em class="down">▲ 7%</em><span class="spark red">╱╲╱╱</span></div><div class="route-line"><b>MAA – SYD</b><strong>₹54,620</strong><em class="up">▼ 1%</em><span class="spark green">╲╱╲╱</span></div>
+    </article>
+
+    <article class="card"><div class="card-head"><div><h3>Airline Comparison</h3><p>Average fare across monitored quotes</p></div><a>View All →</a></div>
+      <div class="table-head air-head"><span></span><span>Airline</span><span>Market Share</span><span>Avg. Fare</span><span>Trend</span></div>
+      <div class="air"><i class="logo l1">6E</i><span>IndiGo</span><div class="market"><div class="bar"><b style="width:82%"></b></div><small>32%</small></div><strong>₹6,240</strong><span class="spark red">╱╲╱╱</span></div>
+      <div class="air"><i class="logo l2">AI</i><span>Air India</span><div class="market"><div class="bar red"><b style="width:70%"></b></div><small>28%</small></div><strong>₹6,780</strong><span class="spark red">╱╲╱╱</span></div>
+      <div class="air"><i class="logo l3">AI</i><span>Air India Express</span><div class="market"><div class="bar orange"><b style="width:35%"></b></div><small>14%</small></div><strong>₹5,920</strong><span class="spark green">╲╱╲╱</span></div>
+      <div class="air"><i class="logo l4">A</i><span>Akasa Air</span><div class="market"><div class="bar violet"><b style="width:30%"></b></div><small>12%</small></div><strong>₹5,640</strong><span class="spark green">╲╱╲╱</span></div>
+      <div class="air"><i class="logo l5">SG</i><span>SpiceJet</span><div class="market"><div class="bar tan"><b style="width:25%"></b></div><small>10%</small></div><strong>₹5,480</strong><span class="spark red">╱╲╱╱</span></div>
+      <div class="air"><i class="logo l6">UK</i><span>Vistara</span><div class="market"><div class="bar navy"><b style="width:20%"></b></div><small>8%</small></div><strong>₹6,120</strong><span class="spark red">╱╲╱╱</span></div>
+    </article>
+  </div>
+
+  <div class="bottom-grid">
+    <article class="card anomaly"><div class="card-head"><div><h3>⚠ Recent Anomalies</h3><p>Detected unusual fare movements</p></div><a>View All →</a></div><div class="alert"><i>!</i><div><b>DEL – BOM</b><span>Sudden fare increase</span></div><strong>+38%</strong><small>2 hours ago</small></div><div class="alert"><i>!</i><div><b>BLR – CCU</b><span>Unusual drop detected</span></div><strong class="green-t">−27%</strong><small>5 hours ago</small></div><div class="alert"><i>!</i><div><b>DEL – DXB</b><span>Higher than seasonal avg</span></div><strong>+22%</strong><small>1 day ago</small></div></article>
+    <article class="card ai"><div class="card-head"><div><h3>✦ AI Insights</h3><p>Key observations from data analysis</p></div><a>See More →</a></div><div class="insight">✦ <span>Fares on <b>DEL – BOM</b> have increased by <b>38%</b> in the last 48 hours, likely due to reduced seat availability.</span></div><div class="insight">✦ <span>International fares to Europe are <b>12% lower</b> this week compared to last month.</span></div><div class="insight">✦ <span>Booking patterns indicate a <b>25% higher</b> demand for domestic travel during upcoming festival season.</span></div></article>
+    <article class="card sources"><div class="card-head"><div><h3>🗃 Data Sources</h3><p>Live data from airline &amp; OTA portals</p></div><a>View All →</a></div><div class="source-tabs"><b class="active">Airlines</b><b>OTAs</b><b>Others</b></div><div class="logos"><span>IndiGo</span><span>Air India</span><span>Akasa Air</span><span>SpiceJet</span><span>Vistara</span><span>MakeMyTrip</span><span>Yatra</span><span>EaseMyTrip</span><span>Cleartrip</span><span>Ixigo</span><span>Goibibo</span><span class="add">+</span></div></article>
+  </div>
+  <footer>Ministry of Statistics &amp; Programme Implementation &nbsp;|&nbsp; Government of India <span>Real-time Airfare Price Index (APIx) &nbsp;|&nbsp; Prototype v1.0</span></footer>
+</section>
+</main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
